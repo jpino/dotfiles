@@ -179,7 +179,7 @@ bar {
 
 font pango: Ubuntu Condensed 11
 
-new_window none
+#new_window none
 
 focus_follows_mouse no
 
@@ -191,17 +191,34 @@ client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
 
-#
-# Keyboard shortcuts
-#
+######################
+# Keyboard shortcuts #
+######################
+
+# Applications
 bindsym Mod4+b exec google-chrome
 bindsym Mod4+n exec subl
 bindsym Mod4+t exec i3-sensible-terminal
 bindsym Mod4+m exec mumble
 bindsym Mod4+h exec nautilus --no-desktop
-bindsym Mod4+l exec i3lock -u -i ~/.i3/9okUv.png -f -c 0000ff
 
-#
-# Run at start
-#
+# Lock screen
+bindsym XF86Launch1 exec --no-startup-id i3lock -u -i ~/.i3/9okUv.png -c 0000ff
+bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.i3/9okUv.png -c 0000ff
+
+# Brightness control
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+
+# Volume control
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+################
+# Run at start #
+################
+
+# Set background color
 exec --no-startup-id xsetroot -solid "#002244"
+
