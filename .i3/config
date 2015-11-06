@@ -227,14 +227,14 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 # Run at start #
 ################
 
-# Set background color
-exec --no-sstartup-id xsetroot -solid "#002244"
+# Set background
+exec --no-startup-id feh --bg-max ~/dotfiles/.i3/YtY2Hd0.jpg
 
 # Run network manager
 exec --no-startup-id nm-applet
 
 # Keyboard layout toggler
-exec --no-startup-id "setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle"
+exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle
 
 # Disable touchpad
 exec --no-startup-id synclient TouchpadOff=1
