@@ -236,5 +236,8 @@ exec --no-startup-id nm-applet
 # Keyboard layout toggler
 exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle
 
+# Remap CapsLock to Escape
+exec --no-startup-id setxkbmap -option caps:escape
+
 # Disable touchpad
 exec --no-startup-id synclient TouchpadOff=1
