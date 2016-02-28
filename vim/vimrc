@@ -1,0 +1,48 @@
+set nocompatible
+
+" General configuration
+let base16colorspace=256
+"set t_Co=256
+set number
+set backspace=indent,eol,start
+set history=500
+set showcmd
+set showmode
+set autoread
+set encoding=utf8
+
+filetype plugin on
+filetype indent on
+syntax on
+colorscheme base16-eighties
+set background=dark
+
+"Turn off swap files
+set noswapfile
+set nobackup
+set nowb
+
+"Indentation
+set autoindent
+set smartindent
+set smarttab
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set expandtab
+
+"Search
+set incsearch       " Find the next match as we type the search
+set hlsearch        " Highlight searches by default
+set ignorecase      " Ignore case when searching...
+set smartcase       " ...unless we type a capital
+
+set scrolloff=5
+set ruler
+set showmatch
+
+" Auto-reload vimrc
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }

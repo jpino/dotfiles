@@ -1,0 +1,3 @@
+# Base16 Shell
+121 BASE16_SHELL="$HOME/dotfiles/urxvt/base16-eighties.dark.sh"
+122 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
