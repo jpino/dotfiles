@@ -18,3 +18,5 @@ i3blocks
 xbacklight (controls brightness)
 network-manager-openvpn
 fonts-font-awesome
+rxvt-unicode-256color
+
