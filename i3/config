@@ -232,5 +232,8 @@ exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_
 # Remap CapsLock to Escape
 exec --no-startup-id setxkbmap -option caps:escape
 
+# Run ~/.Xresources
+exec --no-startup-id xrdb ~/.Xresources
+
 # Disable touchpad
 exec --no-startup-id synclient TouchpadOff=1

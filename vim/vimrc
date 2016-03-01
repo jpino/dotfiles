@@ -1,28 +1,37 @@
 set nocompatible
 
-" General configuration
-let base16colorspace=256
-"set t_Co=256
+execute pathogen#infect()
+
+
+" Basic options
+filetype indent plugin on
+syntax on
 set number
 set backspace=indent,eol,start
 set history=500
 set showcmd
 set showmode
 set autoread
-set encoding=utf8
+set encoding=utf-8
+set laststatus=2
+set visualbell
+set mouse=a
+"set cmdheight=2
+"set wildmenu
+set hidden
 
-filetype plugin on
-filetype indent on
-syntax on
+" Colours
+"set t_Co=256
+let base16colorspace=256
 colorscheme base16-eighties
 set background=dark
 
-"Turn off swap files
+" Turn off swap files
 set noswapfile
 set nobackup
 set nowb
 
-"Indentation
+" Indentation
 set autoindent
 set smartindent
 set smarttab
@@ -31,7 +40,7 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
-"Search
+" Search
 set incsearch       " Find the next match as we type the search
 set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
@@ -46,3 +55,5 @@ augroup reload_vimrc " {
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
+
+map <C-n> :NERDTreeToggle<CR>
