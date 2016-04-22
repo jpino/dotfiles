@@ -1,0 +1,14 @@
+# Add to .bashrc
+
+# Base16 Shell
+BASE16_SHELL="$HOME/dotfiles/urxvt/base16-eighties.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# link .Xresources file
+
+ln -s ~/dotfiles/urxvt/Xresources ~/.Xresources
+
+# run .Xresources
+
+xrdb ~/.Xresources
+
