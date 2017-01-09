@@ -1,7 +1,15 @@
 set nocompatible
 
-execute pathogen#infect()
+" execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
 
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rust-lang/rust.vim'
+
+call plug#end()
 
 " Basic options
 filetype indent plugin on
@@ -19,6 +27,7 @@ set mouse=a
 "set cmdheight=2
 "set wildmenu
 set hidden
+let mapleader="\<Space>"
 
 " Colours
 "set t_Co=256
