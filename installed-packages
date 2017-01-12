@@ -5,6 +5,10 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 apt-cache update
 apt-get install...
 
+libxml2-dev 
+libxslt1-dev 
+zlib1g-dev
+libffi-dev
 
 vim
 git
