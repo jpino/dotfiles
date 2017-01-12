@@ -227,10 +227,10 @@ exec --no-startup-id xsetroot -solid "#111111"
 exec --no-startup-id nm-applet
 
 # Keyboard layout toggler
-exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle
+# exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle
 
 # Remap CapsLock to Escape
-exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option ctrl:nocaps
 
 # Run ~/.Xresources
 exec --no-startup-id xrdb ~/.Xresources
