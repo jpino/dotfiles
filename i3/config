@@ -235,6 +235,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
+# Keyboard layout toggler (es <-> us)
+bindsym Mod4+k exec --no-startup-id (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap es || setxkbmap us
+
 
 ##################
 # Run on startup #
@@ -245,9 +248,6 @@ exec --no-startup-id xsetroot -solid "#111111"
 
 # Run network manager
 exec --no-startup-id nm-applet
-
-# Keyboard layout toggler
-# exec --no-startup-id setxkbmap -model pc105 -layout us,es -option grp:win_space_toggle
 
 # Remap CapsLock to Escape
 exec --no-startup-id setxkbmap -option ctrl:nocaps
