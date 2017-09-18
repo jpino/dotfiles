@@ -9,6 +9,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+# $mod = Alt
 set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -30,7 +31,7 @@ font pango: Ubuntu Mono, FontAwesome 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -152,38 +153,56 @@ bindsym $mod+r mode "resize"
 ##################
 
 #
+# Colors
+#
+set $base00 #2d2d2d
+set $base01 #393939
+set $base02 #515151
+set $base03 #747369
+set $base04 #a09f93
+set $base05 #d3d0c8
+set $base06 #e8e6df
+set $base07 #f2f0ec
+set $base08 #f2777a
+set $base09 #f99157
+set $base0A #ffcc66
+set $base0B #99cc99
+set $base0C #66cccc
+set $base0D #6699cc
+set $base0E #cc99cc
+set $base0F #d27b53
+
+#
 # The bottom bar
 #
 bar {
-    status_command i3blocks -c ~/.i3/i3blocks.conf
-    #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-    #font pango: Ubuntu Mono 12
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
 	colors {
-        background #111111
-        statusline #ffffff
-        separator #666666
+        background $base00
+        statusline $base07
+        separator $base03
 
-        focused_workspace  #285577 #285577 #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-    	urgent_workspace   #2f343a #900000 #ffffff
+        focused_workspace  $base02 $base02 $base07
+        active_workspace   $base00 $base00 $base07
+        inactive_workspace $base00 $base00 $base03
+    	urgent_workspace   $base09 $base09 $base00
 	}
 
 }
 
 
-#font pango: Ubuntu Condensed 11
-
+# Borderless windows
 new_window none
 
-
+# Yup
 focus_follows_mouse no
+
 
 #
 # Some colors
 #
-client.focused #0088CC #0088CC #ffffff #dddddd
+client.focused $base0D #0088CC #ffffff #dddddd
 client.focused_inactive #333333 #333333 #888888 #292d2e
 client.unfocused #333333 #333333 #888888 #292d2e
 client.urgent #2f343a #900000 #ffffff #900000
@@ -216,9 +235,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-################
-# Run at start #
-################
+
+##################
+# Run on startup #
+##################
 
 # Set background
 exec --no-startup-id xsetroot -solid "#111111"
