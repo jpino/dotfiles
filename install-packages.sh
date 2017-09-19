@@ -17,6 +17,11 @@ fonts-font-awesome
 git
 neovim
 xsel
+thunar
+gnome-icon-theme
+lxappearance
+fonts-font-awesome
+rxvt-unicode-256color
 
 libxml2-dev
 libxslt1-dev
@@ -31,8 +36,6 @@ pavucontrol
 vlc
 network-manager-openvpn
 network-manager-openvpn-gnome
-fonts-font-awesome
-rxvt-unicode-256color
 audacious
 bleachbit
 curl
