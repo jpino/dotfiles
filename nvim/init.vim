@@ -8,11 +8,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
 Plug 'chriskempson/base16-vim'
-
+"Plug 'itchyny/lightline.vim'
 call plug#end()
 
 
@@ -36,7 +34,7 @@ set showmatch                               " Show matching brackets when text i
 set matchtime=2                             " How many tenths of a second to blink when matching brackets
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
-"set nojoinspaces                            " No extra space when joining a line which ends with . ? !
+"set nojoinspaces                            " No extra space when joining a line which ends w ith . ? !
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
 set updatetime=1000                         " Update time used to create swap file or other things
 "set suffixesadd+=.js,.rb                    " Add js and ruby files to suffixes
@@ -102,7 +100,7 @@ vnoremap <Leader>y "+y
 
 
 " TODO:
-" Remove trailing whitespaces automatically before save   
+" Remove trailing whitespaces automatically before save
 
 
 "

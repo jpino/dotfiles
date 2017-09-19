@@ -11,8 +11,8 @@ i3:
 	ln -fs `pwd`/i3 ~/.config/i3
 
 bash:
-	# git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
-	# chmod u+x ~/.config/base16-shell/scripts/*
+	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+	chmod u+x ~/.config/base16-shell/scripts/*
 	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
 	echo "source `pwd`/bash/aliases" >> ~/.bashrc
 	echo "source ~/.config/colors.shell" >> ~/.bashrc
