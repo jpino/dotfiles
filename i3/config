@@ -212,12 +212,9 @@ client.urgent #2f343a #900000 #ffffff #900000
 ######################
 
 # Applications
-bindsym Mod4+b exec google-chrome
-bindsym Mod4+n exec subl
+bindsym Mod4+b exec firefox
 bindsym Mod4+t exec urxvt
-bindsym Mod4+m exec mumble
-bindsym Mod4+h exec nautilus --no-desktop
-bindsym Mod4+s exec skype
+bindsym Mod4+h exec thunar
 
 # Print screen
 bindsym Print exec --no-startup-id gnome-screenshot --interactive
