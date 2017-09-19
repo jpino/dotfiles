@@ -1,5 +1,5 @@
-all: vim tmux i3 urxvt git
-.PHONY: vim tmux i3 urxvt git
+all: vim tmux i3 urxvt git bash
+.PHONY: vim tmux i3 urxvt git bash
 
 vim:
 	ln -fs `pwd`/vim ~/.vim
@@ -10,8 +10,15 @@ tmux:
 i3:
 	ln -fs `pwd`/i3 ~/.config/i3
 
+bash:
+	# git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+	# chmod u+x ~/.config/base16-shell/scripts/*
+	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
+	echo "source `pwd`/bash/aliases" >> ~/.bashrc
+	echo "source ~/.config/colors.shell" >> ~/.bashrc
+	`pwd`/bash/base16.sh eighties
+
 urxvt:
-	echo "source `pwd`/urxvt/base16-eighties.dark.sh" >> ~/.bashrc
 	ln -fs `pwd`/urxvt/Xresources ~/.Xresources
 	xrdb ~/.Xresources
 

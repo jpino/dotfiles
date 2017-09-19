@@ -11,6 +11,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
 Plug 'rust-lang/rust.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
@@ -61,12 +62,13 @@ set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
 "
 " Colors
 "
-if has('termguicolors')
-  set termguicolors " Turn on true colors support
+let base16colorspace=256
+"set background=dark
+if filereadable(expand("~/.config/colors.vim"))
+    source ~/.config/colors.vim
+else
+    colorscheme base16-eighties
 endif
-colorscheme base16-eighties
-set background=dark
-"let base16colorspace=256
 
 
 "

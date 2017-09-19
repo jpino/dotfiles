@@ -1,0 +1,2 @@
+alias vim=nvim
+alias base16="$HOME/dotfiles/bash/base16.sh"
