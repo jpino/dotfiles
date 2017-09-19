@@ -1,30 +1,20 @@
+! General
+Xft*dpi: 96
+Xft*antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintsfull
+!Xft.autohint: false
+!Xft.lcdfilter: lcddefault
+
 ! Fonts
-UXft*dpi:       96
-Xft*antialias: True
-Xft*hinting:   Full
-Rxvt*font:xft:Ubuntu Mono:pixelsize=18
-URxvt*boldFont:xft:Ubuntu Mono:bold:pixelsize=18
-URxvt*italicFont:xft:Ubuntu Mono:italic:pixelsize=18
-URxvt*boldItalicFont:xft:Ubuntu Mono:bold:italic:pixelsize=18
+URxvt*font:xft:Ubuntu Mono:pixelsize=18
+!URxvt*boldFont:xft:Ubuntu Mono:bold:pixelsize=18
+!URxvt*italicFont:xft:Ubuntu Mono:italic:pixelsize=18
+!URxvt*boldItalicFont:xft:Ubuntu Mono:bold:italic:pixelsize=18
+!URxvt.letterSpace: -1
 
+! Misc
 URxvt*saveLines: 65536
-URxvt*scrollColor: #777777
-URxvt*scrollstyle: plain
+URxvt.scrollBar: false
 
-
-! do not scroll with output
-URxvt*scrollTtyOutput: false
-
-! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer: true
-
-! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress: true
-
-
-#define base00 #2d2d2d
-#define base05 #d3d0c8
-
-URxvt*.foreground:   base05
-URxvt*.background:   base00
-URxvt*.cursorColor:  base05
