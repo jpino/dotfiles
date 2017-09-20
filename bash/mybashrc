@@ -1,1 +1,1 @@
-source ~/.config/base16-shell/scripts/base16-eighties.sh
+export RUST_SRC_PATH="~/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"

@@ -6,17 +6,26 @@
 "
 call plug#begin('~/.config/nvim/plugged')
 
-" Plug 'scrooloose/nerdcommenter'
+" General
+Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
-Plug 'rust-lang/rust.vim'
 Plug 'chriskempson/base16-vim'
-"Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" Rust
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
+
 call plug#end()
 
 
 "
 " General settings
 "
+filetype plugin indent on
 set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
 "set shell=/bin/zsh                          " Setting shell to zsh
@@ -42,7 +51,7 @@ set synmaxcol=160                           " Don't try to syntax highlight mini
 set nospell
 set mouse=a
 set ruler
-
+set cursorline
 
 "
 " Search
@@ -115,3 +124,17 @@ autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 set nobackup
 set nowb
 set noswapfile
+
+
+" Deoplete configuration
+let g:deoplete#enable_at_startup = 1
+
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" TODO: load language config only for proper file type "
+source $HOME/.config/nvim/rust.vim
+

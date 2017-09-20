@@ -25,3 +25,6 @@ urxvt:
 git:
 	ln -fs `pwd`/git/gitconfig ~/.gitconfig
 
+rust:
+	curl https://sh.rustup.rs -sSf | sh
+	cargo install racer rustfmt
