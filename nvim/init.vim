@@ -11,13 +11,19 @@ Plug 'scrooloose/nerdcommenter'
 " Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-surround'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+
+" Statusline
+Plug 'itchyny/lightline.vim'
+Plug 'felixjung/vim-base16-lightline'
+
+" Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 
 call plug#end()
 
@@ -30,10 +36,10 @@ set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
 "set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
-set showmode                                " Always show mode
+set noshowmode                                " Always show mode
 set showcmd                                 " Show commands as you type them
 "set textwidth=120                           " Text width is 120 characters
-set cmdheight=1                             " Command line height
+set cmdheight=2                             " Command line height
 set pumheight=10                            " Completion window max size
 set noswapfile                              " New buffers will be loaded without creating a swapfile
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
@@ -70,11 +76,13 @@ set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
 " Colors
 "
 let base16colorspace=256
-"set background=dark
+
 if filereadable(expand("~/.config/colors.vim"))
     source ~/.config/colors.vim
-else
-    colorscheme base16-eighties
+endif
+
+if filereadable(expand("~/.config/colors.lightline.vim"))
+    source ~/.config/colors.lightline.vim
 endif
 
 
@@ -108,14 +116,13 @@ vnoremap <Leader>y "+y
 
 
 
-" TODO:
-" Remove trailing whitespaces automatically before save
-
 
 "
 " Reload init.vim on save
 "
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
+
+nnoremap <F5> :source $MYVIMRC<CR>
 
 
 "
@@ -126,15 +133,9 @@ set nowb
 set noswapfile
 
 
-" Deoplete configuration
-let g:deoplete#enable_at_startup = 1
-
-
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-" TODO: load language config only for proper file type "
-source $HOME/.config/nvim/rust.vim
 

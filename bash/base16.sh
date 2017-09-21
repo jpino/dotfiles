@@ -6,6 +6,7 @@ if [[ -x "$SCRIPT_PATH" ]]
 then
     eval $SCRIPT_PATH
     echo "colorscheme base16-$1" > $HOME/.config/colors.vim
+    echo "let g:lightline = { 'colorscheme': 'base16_$1' }" > $HOME/.config/colors.lightline.vim
     echo "source $SCRIPT_PATH" > $HOME/.config/colors.shell
 else
     echo "ERROR: File $SCRIPT_PATH is missing or not executable."
