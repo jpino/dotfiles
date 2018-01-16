@@ -8,7 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General
 Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'chriskempson/base16-vim'
 Plug 'tpope/vim-surround'
 
@@ -36,6 +36,7 @@ set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
 "set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
+set relativenumber
 set noshowmode                                " Always show mode
 set showcmd                                 " Show commands as you type them
 "set textwidth=120                           " Text width is 120 characters
@@ -45,7 +46,7 @@ set noswapfile                              " New buffers will be loaded without
 set hidden                                  " Enables to switch between unsaved buffers and keep undo history
 set clipboard+=unnamed                      " Allow to use system clipboard
 set lazyredraw                              " Don't redraw while executing macros (better performance)
-set showmatch                               " Show matching brackets when text indicator is over them
+set showmatch                               " Show matching brackets when text indicator is iover them
 set matchtime=2                             " How many tenths of a second to blink when matching brackets
 set nostartofline                           " Prevent cursor from moving to beginning of line when switching buffers
 set virtualedit=block                       " To be able to select past EOL in visual block mode
@@ -58,6 +59,10 @@ set nospell
 set mouse=a
 set ruler
 set cursorline
+set list                                    " Show listchars by default
+set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
+
+
 
 "
 " Search
@@ -66,10 +71,6 @@ set ignorecase                              " Ignore case by default
 set smartcase                               " Make search case sensitive only if it contains uppercase letters
 set wrapscan                                " Search again from top when reached the bottom
 set nohlsearch                              " Don't highlight after search
-
-set list                                    " Show listchars by default
-set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
-"set showbreak=↪
 
 
 "
@@ -96,12 +97,32 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+vnoremap < <gv
+vnoremap > >gv
+
+
+let mapleader=";"
+
+"
+" Buffers
+"
+nnoremap <Leader>b :ls<CR>
+"nnoremap <C-h> :bp<CR>
+"nnoremap <C-l> :bn<CR>
+nnoremap <Leader>1 :b1<CR>
+nnoremap <Leader>2 :b2<CR>
+nnoremap <Leader>3 :b3<CR>
+nnoremap <Leader>4 :b4<CR>
+nnoremap <Leader>5 :b5<CR>
+nnoremap <Leader>6 :b6<CR>
+nnoremap <Leader>7 :b7<CR>
+nnoremap <Leader>8 :b8<CR>
+nnoremap <Leader>9 :b9<CR>
 
 
 "
 " Key mappings
 "
-let mapleader=";"
 nnoremap j gj
 nnoremap k gk
 vnoremap j gj
@@ -133,9 +154,14 @@ set nowb
 set noswapfile
 
 
+
 " Snippets
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
+" NERDTree
+nnoremap <Leader>e :NERDTreeToggle<CR>
+let g:NERDTreeMinimalUI = 1
 
+let g:deoplete#enable_at_startup = 1

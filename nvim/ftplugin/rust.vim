@@ -1,9 +1,9 @@
 " Deoplete configuration
-let g:deoplete#enable_at_startup = 1
+"let g:deoplete#enable_at_startup = 1
 
 " LangaugeClient-neovim
 let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
-let g:LanguageClient_autoStart = 0
+let g:LanguageClient_autoStart = 1
 
 "nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 "nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
@@ -11,6 +11,7 @@ let g:LanguageClient_autoStart = 0
 nnoremap <silent> <F5> :LanguageClientStart<CR>
 nnoremap <silent> <F6> :LanguageClientStop<CR>
 nnoremap <silent> <F7> :call LanguageClient_textDocument_formatting()<CR>
+nnoremap <silent> <F8> :call LanguageClient_textDocument_hover()<CR>
 
 augroup LanguageClient_config
     autocmd!
