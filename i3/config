@@ -235,8 +235,8 @@ bindsym Mod4+h exec thunar
 bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
 # Lock screen
-bindsym XF86Launch1 exec --no-startup-id i3lock -u -i ~/.i3/9okUv.png -c 0000ff
-bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.i3/9okUv.png -c 0000ff
+bindsym XF86Launch1 exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 0000ff
+bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 0000ff
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
