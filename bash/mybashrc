@@ -2,3 +2,6 @@
 export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 export PATH=$PATH:$HOME/bin
+
+# fzf uses ripgrep
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'

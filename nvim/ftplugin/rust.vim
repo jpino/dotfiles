@@ -2,7 +2,7 @@
 "let g:deoplete#enable_at_startup = 1
 
 " LangaugeClient-neovim
-let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'nightly', 'rls'] }
+let g:LanguageClient_serverCommands = { 'rust': ['rustup', 'run', 'stable', 'rls'] }
 let g:LanguageClient_autoStart = 1
 
 "nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>

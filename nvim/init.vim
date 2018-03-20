@@ -7,10 +7,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " General
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'
 Plug 'chriskempson/base16-vim'
-Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'
 
 " Statusline
 Plug 'itchyny/lightline.vim'
@@ -21,9 +20,14 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Rust
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+"Plug 'sebastianmarkow/deoplete-rust', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+"Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -64,6 +68,7 @@ set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:·,nbsp:·
 
 
 
+
 "
 " Search
 "
@@ -101,14 +106,14 @@ vnoremap < <gv
 vnoremap > >gv
 
 
-let mapleader=";"
+"let mapleader=";
+noremap <Space> <Nop>
+let mapleader = "\<Space>"
+
 
 "
 " Buffers
 "
-nnoremap <Leader>b :ls<CR>
-"nnoremap <C-h> :bp<CR>
-"nnoremap <C-l> :bn<CR>
 nnoremap <Leader>1 :b1<CR>
 nnoremap <Leader>2 :b2<CR>
 nnoremap <Leader>3 :b3<CR>
@@ -121,6 +126,16 @@ nnoremap <Leader>9 :b9<CR>
 
 
 "
+" fzf commands
+"
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>/ :Find<space>
+
+" Find inside files
+command! -bang -nargs=* Find call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+"
 " Key mappings
 "
 nnoremap j gj
@@ -129,6 +144,7 @@ vnoremap j gj
 vnoremap k gk
 
 nnoremap <Leader>w :update<CR>
+nnoremap <Leader>q :bd<CR>
 
 " Copy to and paste from the system clipboard (register +)
 nnoremap <Leader>p "+p
@@ -156,12 +172,8 @@ set noswapfile
 
 
 " Snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
-" NERDTree
-nnoremap <Leader>e :NERDTreeToggle<CR>
-let g:NERDTreeMinimalUI = 1
+" let g:UltiSnipsExpandTrigger="<tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 let g:deoplete#enable_at_startup = 1
