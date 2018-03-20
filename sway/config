@@ -147,7 +147,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Borderless windows
-new_window none
+default_border none
 
 # Yup
 focus_follows_mouse no

@@ -1,8 +1,8 @@
-all: vim tmux i3 urxvt git bash
-.PHONY: vim tmux i3 urxvt git bash
+all: neovim tmux i3 urxvt git bash
+.PHONY: neovim tmux i3 urxvt git bash
 
-vim:
-	ln -fs `pwd`/vim ~/.vim
+neovim:
+	ln -fs `pwd`/nvim ~/.config/nvim
 
 tmux:
 	ln -fs `pwd`/tmux/tmux.conf ~/.tmux.conf
