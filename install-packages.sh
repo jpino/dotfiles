@@ -13,7 +13,7 @@ thunar
 gnome-icon-theme
 lxappearance
 fonts-font-awesome
-rxvt-unicode-256color
+rxvt-unicode
 python3-pip
 
 libxml2-dev
