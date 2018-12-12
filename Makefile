@@ -1,7 +1,14 @@
 all: neovim tmux i3 urxvt git bash
 .PHONY: neovim tmux i3 urxvt git bash
 
+folders:
+	mkdir ~/bin
+	mkdir ~/src
+
 neovim:
+	cd ~/bin
+	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	chmod u+x nvim.appimage
 	ln -fs `pwd`/nvim ~/.config/nvim
 
 tmux:

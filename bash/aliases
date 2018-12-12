@@ -1,4 +1,5 @@
-alias vim=nvim
+alias vim=nvim.appimage
+
 alias base16="$HOME/dotfiles/bash/base16.sh"
 
 # cargo

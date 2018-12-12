@@ -1,10 +1,3 @@
-# Get additional sources
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
-sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-
-add-apt-repository https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable
-
-
 # Update and upgrade packages
 apt update && apt upgrade
 
@@ -15,7 +8,6 @@ i3
 i3blocks
 fonts-font-awesome
 git
-neovim
 xsel
 thunar
 gnome-icon-theme
@@ -29,7 +21,6 @@ libxslt1-dev
 zlib1g-dev
 libffi-dev
 tmux
-google-chrome-stable
 htop
 xbacklight
 mumble

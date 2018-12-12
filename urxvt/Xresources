@@ -8,7 +8,7 @@ Xft.hintstyle: hintsfull
 !Xft.lcdfilter: lcddefault
 
 ! Fonts
-URxvt*font:xft:Ubuntu Mono:pixelsize=18
+URxvt*font:xft:Ubuntu Mono:pixelsize=16
 !URxvt*boldFont:xft:Ubuntu Mono:bold:pixelsize=18
 !URxvt*italicFont:xft:Ubuntu Mono:italic:pixelsize=18
 !URxvt*boldItalicFont:xft:Ubuntu Mono:bold:italic:pixelsize=18
