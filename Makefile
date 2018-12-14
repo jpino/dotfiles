@@ -2,8 +2,8 @@ all: neovim tmux i3 urxvt git bash
 .PHONY: neovim tmux i3 urxvt git bash
 
 folders:
-	mkdir ~/bin
-	mkdir ~/src
+	mkdir -p ~/bin
+	mkdir -p ~/src
 
 neovim:
 	cd ~/bin
@@ -15,10 +15,11 @@ tmux:
 	ln -fs `pwd`/tmux/tmux.conf ~/.tmux.conf
 
 i3:
+	git clone --depth 1 https://github.com/khamer/base16-i3 ~/.config/base16-i3
 	ln -fs `pwd`/i3 ~/.config/i3
 
 bash:
-	git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+	git clone --depth 1 https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 	chmod u+x ~/.config/base16-shell/scripts/*
 	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
 	echo "source `pwd`/bash/aliases" >> ~/.bashrc
