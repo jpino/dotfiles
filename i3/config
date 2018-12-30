@@ -211,7 +211,7 @@ client.background       $base07
 
 # Applications
 bindsym Mod4+b exec firefox
-bindsym Mod4+t exec urxvt
+bindsym Mod4+m exec urxvt -e bash -i -c "cmus"
 bindsym Mod4+h exec thunar
 
 # Print screen

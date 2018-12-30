@@ -32,7 +32,11 @@ audacious
 bleachbit
 curl
 nmap
+
+arc-theme
+papirus-icon-theme
 "
+
 
 
 # Install packages

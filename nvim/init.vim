@@ -29,6 +29,10 @@ Plug 'honza/vim-snippets'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
+
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 call plug#end()
 
 
@@ -40,7 +44,7 @@ set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
 "set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
-set relativenumber
+"set relativenumber
 set noshowmode                                " Always show mode
 set showcmd                                 " Show commands as you type them
 "set textwidth=120                           " Text width is 120 characters
