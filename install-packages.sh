@@ -15,7 +15,9 @@ lxappearance
 fonts-font-awesome
 rxvt-unicode
 python3-pip
-
+pandoc
+texlive-latex-base
+texlive-fonts-recommended
 libxml2-dev
 libxslt1-dev
 zlib1g-dev
