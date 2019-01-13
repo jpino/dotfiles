@@ -37,9 +37,17 @@ nmap
 
 arc-theme
 papirus-icon-theme
+
+lightdm
+slick-greeter
+lightdm-settings
 "
 
-
+REMOVE_APT_PACKAGES="
+nautilus
+ubuntu-web-launchers
+unity-greeter
+"
 
 # Install packages
 apt install $APT_PACKAGES

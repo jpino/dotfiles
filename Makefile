@@ -36,3 +36,6 @@ git:
 rust:
 	curl https://sh.rustup.rs -sSf | sh
 	cargo install racer rustfmt
+
+postinstall:
+	gio mime inode/directory Thunar-folder-handler.desktop

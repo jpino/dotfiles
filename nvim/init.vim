@@ -1,6 +1,7 @@
 " Neovim configuration. Work in progress.
 
 
+
 "
 " Plugins
 "
@@ -11,24 +12,24 @@ Plug 'tpope/vim-commentary'
 Plug 'chriskempson/base16-vim'
 "Plug 'tpope/vim-surround'
 
-" Statusline
-Plug 'itchyny/lightline.vim'
-Plug 'felixjung/vim-base16-lightline'
-
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+
 " Rust
 "Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+
+let g:ale_completion_enabled = 1
+let g:ale_lint_on_text_changed = 'never'
+Plug 'w0rp/ale', { 'for': 'rust' }
 "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 "Plug 'sebastianmarkow/deoplete-rust', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 "Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
-
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
-
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -42,10 +43,9 @@ call plug#end()
 filetype plugin indent on
 set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
-"set shell=/bin/zsh                          " Setting shell to zsh
 set number                                  " Line numbers on
 "set relativenumber
-set noshowmode                                " Always show mode
+"set noshowmode                                " Always show mode
 set showcmd                                 " Show commands as you type them
 "set textwidth=120                           " Text width is 120 characters
 set cmdheight=2                             " Command line height
@@ -89,10 +89,6 @@ let base16colorspace=256
 
 if filereadable(expand("~/.config/colors.vim"))
     source ~/.config/colors.vim
-endif
-
-if filereadable(expand("~/.config/colors.lightline.vim"))
-    source ~/.config/colors.lightline.vim
 endif
 
 
@@ -180,4 +176,3 @@ set noswapfile
 " let g:UltiSnipsJumpForwardTrigger = "<tab>"
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-let g:deoplete#enable_at_startup = 1
