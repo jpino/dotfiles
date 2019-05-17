@@ -177,22 +177,22 @@ set $base0F #d27b53
 
 
 # Basic bar configuration using the Base16 variables.
-bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-    colors {
-        background $base00
-        separator  $base01
-        statusline $base04
-
-        # State             Border  BG      Text
-        focused_workspace   $base0D $base0D $base00
-        active_workspace    $base03 $base03 $base00
-        inactive_workspace  $base01 $base01 $base05
-        urgent_workspace    $base08 $base08 $base00
-        binding_mode        $base0A $base0A $base00
-    }
-}
+#bar {
+#    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#
+#    colors {
+#        background $base00
+#        separator  $base01
+#        statusline $base04
+#
+#        # State             Border  BG      Text
+#        focused_workspace   $base0D $base0D $base00
+#        active_workspace    $base03 $base03 $base00
+#        inactive_workspace  $base01 $base01 $base05
+#        urgent_workspace    $base08 $base08 $base00
+#        binding_mode        $base0A $base0A $base00
+#    }
+#}
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
@@ -231,7 +231,13 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Keyboard layout toggler (es <-> us)
-bindsym Mod4+k exec --no-startup-id (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap es || setxkbmap us
+bindsym Mod4+k exec --no-startup-id changekb
+
+# It's show time
+bindsym Mod4+space exec --no-startup-id notify-send -t 5000 "$(date +"%H:%M - %A %d %B %Y")"
+
+# Show workspace number
+bindsym Mod4+w exec --no-startup-id showws
 
 
 ##################
