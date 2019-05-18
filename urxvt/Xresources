@@ -17,4 +17,4 @@ URxvt*font:xft:Ubuntu Mono:pixelsize=16
 ! Misc
 URxvt*saveLines: 65536
 URxvt.scrollBar: false
-
+URxvt*background: black
