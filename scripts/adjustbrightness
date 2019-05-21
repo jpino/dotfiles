@@ -1,0 +1,20 @@
+#!/bin/bash
+
+MAX_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/max_brightness)
+CURRENT_BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+
+if [[ $1 == "up" ]]; then
+    NEXT_BRIGHTNESS=$((CURRENT_BRIGHTNESS+100))
+    if [[ $NEXT_BRIGHTNESS -gt $MAX_BRIGHTNESS ]]; then
+        NEXT_BRIGHTNESS=$MAX_BRIGHTNESS
+    fi
+elif [[ $1 == "down" ]]; then
+    NEXT_BRIGHTNESS=$((CURRENT_BRIGHTNESS-100))
+    if [[ $NEXT_BRIGHTNESS -lt 100 ]]; then
+        NEXT_BRIGHTNESS=100
+    fi
+else
+    NEXT_BRIGHTNESS=400
+fi
+
+echo $NEXT_BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness

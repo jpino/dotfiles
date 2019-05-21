@@ -183,8 +183,8 @@ bindsym XF86Launch1 exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 
 bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 0000ff
 
 # Brightness control
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+bindsym XF86MonBrightnessDown exec --no-startup-id adjustbrightness down
+bindsym XF86MonBrightnessUp exec --no-startup-id adjustbrightness up
 
 # Volume control
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
@@ -209,7 +209,7 @@ bindsym Mod4+w exec --no-startup-id showws
 exec --no-startup-id xsetroot -solid "#111111"
 
 # Run network manager
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Remap CapsLock to Escape
 exec --no-startup-id setxkbmap -option ctrl:nocaps
