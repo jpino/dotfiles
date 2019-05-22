@@ -1,7 +1,3 @@
-alias vim=nvim.appimage
-
-alias base16="$HOME/dotfiles/bash/base16.sh"
-
 alias weather="curl wttr.in"
 # cargo
 alias cr="cargo run"

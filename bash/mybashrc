@@ -5,3 +5,8 @@ export PATH=$HOME/bin:$HOME/dotfiles/scripts:$PATH
 
 # fzf uses ripgrep
 export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
+
+export EDITOR=vim
+
+export NNN_USE_EDITOR=1
+

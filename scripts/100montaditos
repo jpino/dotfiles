@@ -1,0 +1,20 @@
+#!/bin/bash
+
+lsblk | grep -v "^loop"
+echo
+echo -n "device: "
+read device
+DEVICE="/dev/$device"
+
+if grep -qs "$DEVICE" /proc/mounts; then
+    pumount "$DEVICE"
+    if [ $? -eq 0 ]; then
+        notify-send "device unmounted from /media/$device"
+    fi
+else
+    pmount "$DEVICE"
+    if [ $? -eq 0 ]; then
+        notify-send "device mounted at /media/$device"
+    fi
+fi
+
