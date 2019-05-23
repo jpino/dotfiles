@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+for sub in ./*.srt; do
+    echo
+    echo "SUBTITLE: $sub"
+    for vid in ./*; do
+        mime=$(file -bi "$vid")
+        if [[ ! $mime =~ "video" ]]; then
+            continue
+        fi
+
+        echo -n "VIDEO: $vid Match? (y/N): "
+        read match
+        if [[ $match == 'y' ]]; then
+            mv "$sub" "${vid%.*}.srt"
+            break
+        fi
+    done
+done
+
+
