@@ -1,22 +1,42 @@
 #!/bin/bash
 
+if [[ $1 == "--magic" ]]; then
+    mkdir tempsubs
 
-for sub in ./*.srt; do
-    echo
-    echo "SUBTITLE: $sub"
     for vid in ./*; do
         mime=$(file -bi "$vid")
         if [[ ! $mime =~ "video" ]]; then
             continue
         fi
 
-        echo -n "VIDEO: $vid Match? (y/N): "
-        read match
-        if [[ $match == 'y' ]]; then
-            mv "$sub" "${vid%.*}.srt"
-            break
-        fi
-    done
-done
+        #echo "VIDEO: $vid"
 
+        for sub in ./*.srt; do
+            #echo "SUBTITLE: $sub"
+            mv "$sub" "tempsubs/${vid%.*}.srt"
+            break 1
+        done
+    done
+    mv tempsubs/* .
+    rmdir tempsubs
+else
+
+    for sub in ./*.srt; do
+        echo
+        echo "SUBTITLE: $sub"
+        for vid in ./*; do
+            mime=$(file -bi "$vid")
+            if [[ ! $mime =~ "video" ]]; then
+                continue
+            fi
+
+            echo -n "VIDEO: $vid Match? (y/N): "
+            read match
+            if [[ $match == 'y' ]]; then
+                mv "$sub" "${vid%.*}.srt"
+                break
+            fi
+        done
+    done
+fi
 
