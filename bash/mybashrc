@@ -10,3 +10,4 @@ export EDITOR=vim
 
 export NNN_USE_EDITOR=1
 export NNN_BMS='m:/media;d:~/Downloads'
+export NNN_OPENER='mimeopen'
