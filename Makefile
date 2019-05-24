@@ -4,7 +4,15 @@ all: neovim tmux i3 urxvt git bash
 folders:
 	mkdir -p ~/bin
 	mkdir -p ~/src
+	rmdir ~/Documents
+	rmdir ~/Desktop
+	rmdir ~/Music
+	rmdir ~/Pictures
+	rmdir ~/Public
+	rmdir ~/Templates
+	rmdir ~/Videos
 
+.ONESHELL:
 neovim:
 	cd ~/bin
 	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
@@ -12,18 +20,19 @@ neovim:
 	ln -fs `pwd`/nvim ~/.config/nvim
 
 tmux:
-	ln -fs `pwd`/tmux/tmux.conf ~/.tmux.conf
+	ln -fs `pwd`/tmux ~/.config/tmux
 
 i3:
 	git clone --depth 1 https://github.com/khamer/base16-i3 ~/.config/base16-i3
 	ln -fs `pwd`/i3 ~/.config/i3
+	i3-msg reload
 
 bash:
 	git clone --depth 1 https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 	chmod u+x ~/.config/base16-shell/scripts/*
+	echo "source `pwd`/bash/environment" >> ~/.profile
 	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
-	echo "source `pwd`/bash/aliases" >> ~/.bashrc
-	echo "source ~/.config/colors.shell" >> ~/.bashrc
+	ln -fs `pwd`/bash/aliases ~/.bash_aliases
 	`pwd`/bash/base16.sh eighties
 
 urxvt:
