@@ -14,10 +14,11 @@ folders:
 
 .ONESHELL:
 neovim:
-	cd ~/bin
+	cd ~/src
 	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	chmod u+x nvim.appimage
 	ln -fs `pwd`/nvim ~/.config/nvim
+	ln -fs ~/src/nvim.appimage ~/bin/vim
 
 tmux:
 	ln -fs `pwd`/tmux ~/.config/tmux
