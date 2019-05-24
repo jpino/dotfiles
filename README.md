@@ -24,7 +24,8 @@ xargs -a ~/dotfiles/packages/apt-install sudo apt install
 xargs -a ~/dotfiles/packages/apt-remove sudo apt purge
 ```
 
-Start making things
+Reboot to log in with i3 and start making things
+
 ```
 cd ~/dotfiles
 make folders

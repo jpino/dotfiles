@@ -19,6 +19,9 @@ neovim:
 	chmod u+x nvim.appimage
 	ln -fs `pwd`/nvim ~/.config/nvim
 	ln -fs ~/src/nvim.appimage ~/bin/vim
+	curl -fLo ~/dotfiles/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	vim -cmd ":PlugInstall"
+
 
 tmux:
 	ln -fs `pwd`/tmux ~/.config/tmux
