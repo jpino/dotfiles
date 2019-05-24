@@ -1,0 +1,60 @@
+# window manager
+i3
+fonts-font-awesome
+
+# terminal
+rxvt-unicode
+tmux
+fonts-font-awesome
+
+# appearance
+arc-theme
+papirus-icon-theme
+lxappearance
+
+# file managers
+thunar
+nnn
+trash-cli
+
+# sound
+pavucontrol
+
+# system tools
+htop
+pmount
+
+# python
+python3-pip
+
+
+# network
+network-manager
+curl
+nmap
+openssh-server
+sshfs
+
+# music
+cmus
+
+# video
+mpv
+
+# misc
+bleachbit
+jq
+w3m
+irssi
+pass
+xsel
+gnome-icon-theme
+pandoc
+texlive-latex-base
+texlive-fonts-recommended
+libxml2-dev
+libxslt1-dev
+zlib1g-dev
+libffi-dev
+xbacklight
+mumble

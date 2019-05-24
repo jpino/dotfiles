@@ -1,6 +1,12 @@
 all: neovim tmux i3 urxvt git bash
-.PHONY: neovim tmux i3 urxvt git bash
+.PHONY: packages neovim tmux i3 urxvt git bash
 
+packages:
+	grep "^[^#]" ~/dotfiles/packages/apt-install | xargs echo apt install -y
+	grep "^[^#]" ~/dotfiles/packages/apt-remove | xargs echo apt purge -y
+	apt autoremove
+	grep "^[^#]" ~/dotfiles/packages/pip-install | xargs echo pip3 install -y
+	
 folders:
 	mkdir -p ~/bin
 	mkdir -p ~/src

@@ -1,3 +1,0 @@
-nautilus
-ubuntu-web-launchers
-unity-greeter
