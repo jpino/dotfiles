@@ -45,5 +45,5 @@ cd ~/dotfiles
 make all
 ```
 
-If everyting went smooth it means the errors didn't reach the surface. That is a victory. Many things will be broker although not beyond repair. The fun begins now.
+If everyting went smooth it means the errors didn't reach the surface. That is a victory. Many things will be broken although not beyond repair. The fun begins now.
 
