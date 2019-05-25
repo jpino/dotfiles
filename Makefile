@@ -35,6 +35,8 @@ tmux:
 i3:
 	git clone --depth 1 https://github.com/khamer/base16-i3 ~/.config/base16-i3
 	ln -fs `pwd`/i3 ~/.config/i3
+	cp ~/.config/base16-i3/colors/base16-eighties.config ~/.config/colors.i3
+	cat ~/.config/colors.i3 ~/dotfiles/i3/base > ~/dotfiles/i3/config
 	i3-msg reload
 
 bash:
@@ -43,7 +45,7 @@ bash:
 	echo "source `pwd`/bash/environment" >> ~/.profile
 	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
 	ln -fs `pwd`/bash/aliases ~/.bash_aliases
-	`pwd`/bash/base16.sh eighties
+	`pwd`/scripts/base16 eighties
 
 urxvt:
 	ln -fs `pwd`/urxvt/Xresources ~/.Xresources
