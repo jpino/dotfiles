@@ -146,8 +146,7 @@ bindsym Mod4+u exec urxvt -e bash -i -c "100montaditos"
 bindsym Print exec --no-startup-id gnome-screenshot --interactive
 
 # Lock screen
-bindsym XF86Launch1 exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 0000ff
-bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.config/i3/9okUv.png -c 0000ff
+bindsym Mod4+l exec --no-startup-id i3lock -u -i ~/.config/lock-image.png -c 0000ff
 
 # Brightness control
 bindsym XF86MonBrightnessDown exec --no-startup-id adjustbrightness down

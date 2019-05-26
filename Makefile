@@ -21,11 +21,11 @@ folders:
 .ONESHELL:
 neovim:
 	cd ~/src
-	curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	curl -O https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	chmod u+x nvim.appimage
 	ln -fs `pwd`/nvim ~/.config/nvim
 	ln -fs ~/src/nvim.appimage ~/bin/vim
-	curl -fLo ~/dotfiles/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -o ~/dotfiles/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	vim -cmd ":PlugInstall"
 
 
@@ -35,6 +35,7 @@ tmux:
 i3:
 	git clone --depth 1 https://github.com/khamer/base16-i3 ~/.config/base16-i3
 	ln -fs `pwd`/i3 ~/.config/i3
+	curl -o ~/.config/lock-image.png https://i.imgur.com/9okUv.png
 	cp ~/.config/base16-i3/colors/base16-eighties.config ~/.config/colors.i3
 	cat ~/.config/colors.i3 ~/dotfiles/i3/base > ~/dotfiles/i3/config
 	i3-msg reload
@@ -57,6 +58,9 @@ git:
 rust:
 	curl https://sh.rustup.rs -sSf | sh
 	cargo install racer rustfmt
+
+cron:
+	crontab `pwd`/crontab/mycrontab
 
 postinstall:
 	gio mime inode/directory Thunar-folder-handler.desktop
