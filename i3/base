@@ -172,7 +172,8 @@ bindsym Mod4+w exec --no-startup-id showws
 ##################
 
 # Set background
-exec --no-startup-id xsetroot -solid "#111111"
+#exec --no-startup-id xsetroot -solid "#111111"
+exec --no-startup-id feh --bg-center ~/.config/background-image.png
 
 # Run network manager
 #exec --no-startup-id nm-applet
