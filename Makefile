@@ -47,6 +47,7 @@ bash:
 	echo "source `pwd`/bash/environment" >> ~/.profile
 	echo "source `pwd`/bash/mybashrc" >> ~/.bashrc
 	ln -fs `pwd`/bash/aliases ~/.bash_aliases
+	ln -fs ~/dotfiles/bash/inputrc ~/.inputrc
 	`pwd`/scripts/base16 eighties
 
 urxvt:

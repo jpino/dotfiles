@@ -92,6 +92,7 @@ if filereadable(expand("~/.config/colors.vim"))
 endif
 
 
+nnoremap <Leader>z :source ~/.config/colors.vim<CR>
 "
 " Indendation
 "
@@ -123,7 +124,8 @@ nnoremap <Leader>6 :b6<CR>
 nnoremap <Leader>7 :b7<CR>
 nnoremap <Leader>8 :b8<CR>
 nnoremap <Leader>9 :b9<CR>
-
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
 
 "
 " fzf commands
@@ -143,7 +145,7 @@ nnoremap k gk
 vnoremap j gj
 vnoremap k gk
 
-nnoremap <Leader>w :update<CR>
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :bd<CR>
 
 " Copy to and paste from the system clipboard (register +)
