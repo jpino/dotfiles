@@ -42,6 +42,7 @@ cmus
 mpv
 
 # misc
+feh
 bleachbit
 libnotify-bin
 jq
