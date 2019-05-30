@@ -9,7 +9,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General
 Plug 'tpope/vim-commentary'
-Plug 'chriskempson/base16-vim'
+"Plug 'chriskempson/base16-vim'
 "Plug 'tpope/vim-surround'
 
 " Snippets
@@ -87,12 +87,8 @@ set nohlsearch                              " Don't highlight after search
 "
 let base16colorspace=256
 
-if filereadable(expand("~/.config/colors.vim"))
-    source ~/.config/colors.vim
-endif
+colorscheme automatic
 
-
-nnoremap <Leader>z :source ~/.config/colors.vim<CR>
 "
 " Indendation
 "

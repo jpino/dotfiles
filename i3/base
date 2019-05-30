@@ -99,7 +99,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c exec "cat ~/.config/colors.i3 ~/dotfiles/i3/base > ~/dotfiles/i3/config && i3-msg reload"
+bindsym $mod+Shift+c exec "cat ~/dotfiles/i3/colors ~/dotfiles/i3/base > ~/dotfiles/i3/config && i3-msg reload"
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -113,7 +113,7 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Borderless windows
 new_window none
-for_window [class="URxvt"] border pixel 4
+for_window [class="URxvt"] border pixel 9
 
 # Yup
 focus_follows_mouse no
@@ -121,7 +121,7 @@ focus_follows_mouse no
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base08
+client.focused          $base05 $base0D $base00 $base0D $base0B
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08

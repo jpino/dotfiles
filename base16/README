@@ -1,0 +1,1 @@
+The schemes directory contains a collection of Base16 color schemes stolen from somewhere. Each file contains the original author. It makes more sense to me to have them all in one place instead of multiple repos. Makes it easier to generate configuration files on the fly.
