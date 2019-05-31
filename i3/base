@@ -113,8 +113,7 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 
 # Borders
 default_border none
-for_window [class="URxvt"] default_border pixel 4
-default_floating_border pixel 4
+for_window [class="URxvt"] border pixel 4
 
 # Yup
 focus_follows_mouse no
@@ -122,7 +121,7 @@ focus_follows_mouse no
 
 # Basic color configuration using the Base16 variables for windows and borders.
 # Property Name         Border  BG      Text    Indicator Child Border
-client.focused          $base05 $base0D $base00 $base0D $base08
+client.focused          $base08 $base0D $base00 $base0D $base08
 client.focused_inactive $base01 $base01 $base05 $base03 $base01
 client.unfocused        $base01 $base00 $base05 $base01 $base01
 client.urgent           $base08 $base08 $base00 $base08 $base08
