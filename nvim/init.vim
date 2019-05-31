@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General
 Plug 'tpope/vim-commentary'
-"Plug 'chriskempson/base16-vim'
 "Plug 'tpope/vim-surround'
 
 " Snippets
