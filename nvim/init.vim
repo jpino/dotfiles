@@ -15,7 +15,8 @@ Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-Plug 'junegunn/fzf'
+"Plug 'junegunn/fzf'
+Plug '/home/chanante/bin/fzf'
 Plug 'junegunn/fzf.vim'
 
 
@@ -172,4 +173,40 @@ set noswapfile
 " let g:UltiSnipsExpandTrigger="<tab>"
 " let g:UltiSnipsJumpForwardTrigger = "<tab>"
 " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"
+" Status line
+"
+set statusline=
+set statusline+=[%{StatuslineMode()}]    " mode
+set statusline+=\ 
+set statusline+=%f                       " file name
+set statusline+=%m                       " modified flag
+set statusline+=%=                       " right align
+set statusline+=%y                       " file type
+set statusline+=\ 
+set statusline+=[%l,%v]                  " line and column number
+set statusline+=\ 
+set statusline+=[%p%%]                   " percentage through file
+
+function! StatuslineMode()
+  let l:mode=mode()
+  if l:mode==#"n"
+    return "NORMAL"
+  elseif l:mode==?"v"
+    return "VISUAL"
+  elseif l:mode==#"i"
+    return "INSERT"
+  elseif l:mode==#"R"
+    return "REPLACE"
+  elseif l:mode==?"s"
+    return "SELECT"
+  elseif l:mode==#"t"
+    return "TERMINAL"
+  elseif l:mode==#"c"
+    return "COMMAND"
+  elseif l:mode==#"!"
+    return "SHELL"
+  endif
+endfunction
 

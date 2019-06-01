@@ -1,8 +1,2 @@
 alias ll="ls -ahlF"
 alias weather="curl wttr.in"
-# cargo
-alias cr="cargo run"
-alias cb="cargo build"
-alias ct="cargo test"
-alias cw="cargo watch"
-alias cc="cargo check"
