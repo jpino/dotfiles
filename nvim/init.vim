@@ -1,7 +1,3 @@
-" Neovim configuration. Work in progress.
-
-
-
 "
 " Plugins
 "
@@ -15,8 +11,7 @@ Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
-"Plug 'junegunn/fzf'
-Plug '/home/chanante/bin/fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 
