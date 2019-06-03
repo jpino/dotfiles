@@ -1,5 +1,15 @@
 #!/bin/bash
 
-python3 ~/dotfiles/base16/base16-selector.py $1 bash neovim i3 dunst
 
+if [ $# -eq 0 ]; then
+    # if no arguments are passed, launch fzf to select a scheme
+    scheme=$(find ~/dotfiles/base16/schemes -type f -exec basename \{} .yaml \; | sort | fzf)
+    if [[ $scheme = "" ]]; then
+        exit 0
+    fi
+    python3 ~/dotfiles/base16/base16-selector.py $scheme bash neovim i3 dunst
+else
+    # if an argument is passed, install that scheme
+    python3 ~/dotfiles/base16/base16-selector.py $1 bash neovim i3 dunst
+fi
 
