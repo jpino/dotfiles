@@ -1,7 +1,3 @@
-" Neovim configuration. Work in progress.
-
-
-
 "
 " Plugins
 "
