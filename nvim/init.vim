@@ -12,19 +12,21 @@ Plug 'tpope/vim-commentary'
 "Plug 'tpope/vim-surround'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'cespare/vim-toml'
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 
 " Rust
 "Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-let g:ale_completion_enabled = 1
-let g:ale_lint_on_text_changed = 'never'
-Plug 'w0rp/ale', { 'for': 'rust' }
+"let g:ale_completion_enabled = 1
+" let g:ale_lint_on_text_changed = 'never'
+" Plug 'w0rp/ale', { 'for': 'rust' }
 "Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 "Plug 'sebastianmarkow/deoplete-rust', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
@@ -181,6 +183,8 @@ set statusline+=[%{StatuslineMode()}]    " mode
 set statusline+=\ 
 set statusline+=%f                       " file name
 set statusline+=%m                       " modified flag
+set statusline+=\ 
+set statusline^=%{coc#status()}
 set statusline+=%=                       " right align
 set statusline+=%y                       " file type
 set statusline+=\ 
