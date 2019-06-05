@@ -19,6 +19,8 @@ def main(scheme, templates):
         autoescape=select_autoescape(['html', 'xml'])
     )
 
+    print('Installing scheme {}...'.format(scheme))
+
     for t in templates:
         try:
             template = env.get_template('{}.j2'.format(t))
@@ -36,16 +38,21 @@ def main(scheme, templates):
         elif t == 'dunst':
             dunst(r)
 
+    print('Scheme {} installed successfully.'.format(scheme))
+
+
+
 
 def neovim(config):
-    print("Writing neovim config file...")
-    with open(os.path.expanduser('~/dotfiles/nvim/colors/automatic.vim'), 'w') as f:
+    path = os.path.expanduser('~/dotfiles/nvim/colors/automatic.vim')
+    print("Writing neovim config file to {} ...".format(path))
+    with open(path, 'w') as f:
         f.write(config)
 
 
 def bash(config):
-    print("Writing bash config file...")
     path = os.path.expanduser('~/.config/automatic.shell')
+    print("Writing bash config file to {} ...".format(path))
     with open(path, 'w') as f:
         f.write(config)
 
