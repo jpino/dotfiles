@@ -14,7 +14,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'cespare/vim-toml'
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+"Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 
 " Rust
@@ -23,8 +23,11 @@ Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 "let g:ale_completion_enabled = 1
 " let g:ale_lint_on_text_changed = 'never'
 " Plug 'w0rp/ale', { 'for': 'rust' }
-"Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
+" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', 'for': 'rust' }
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
+" Plug 'Shougo/neosnippet.vim', { 'for': 'rust' }
+" Plug 'Shougo/neosnippet-snippets', { 'for': 'rust' }
 "Plug 'sebastianmarkow/deoplete-rust', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 "Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
 
@@ -83,7 +86,6 @@ set nohlsearch                              " Don't highlight after search
 " Colors
 "
 let base16colorspace=256
-
 colorscheme automatic
 
 "
@@ -108,15 +110,6 @@ let mapleader = "\<Space>"
 "
 " Buffers
 "
-nnoremap <Leader>1 :b1<CR>
-nnoremap <Leader>2 :b2<CR>
-nnoremap <Leader>3 :b3<CR>
-nnoremap <Leader>4 :b4<CR>
-nnoremap <Leader>5 :b5<CR>
-nnoremap <Leader>6 :b6<CR>
-nnoremap <Leader>7 :b7<CR>
-nnoremap <Leader>8 :b8<CR>
-nnoremap <Leader>9 :b9<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
@@ -177,10 +170,11 @@ set noswapfile
 set statusline=
 set statusline+=[%{StatuslineMode()}]    " mode
 set statusline+=\ 
-set statusline+=%f                       " file name
-set statusline+=%m                       " modified flag
+set statusline+=[%n]    " mode
 set statusline+=\ 
-set statusline^=%{coc#status()}
+set statusline+=%f                       " file name
+set statusline+=\ 
+set statusline+=%m%r%h%w                       " modified flag
 set statusline+=%=                       " right align
 set statusline+=%y                       " file type
 set statusline+=\ 
