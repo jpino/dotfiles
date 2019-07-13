@@ -50,6 +50,7 @@ base16:
 
 urxvt:
 	ln -fs ~/dotfiles/urxvt/Xresources ~/.Xresources
+	ln -fs ~/dotfiles/urxvt/Xresources ~/.Xdefaults
 	xrdb ~/.Xresources
 
 
