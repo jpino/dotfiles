@@ -16,17 +16,3 @@ export PS1="\[\033[01;32m\][\u@\h] \[\033[01;34m\][\w]\n\[\033[01;31m\]\$\[\033[
 alias ll="ls -ahlF"
 alias weather="curl wttr.in"
 
-
-#
-# Environment variables
-#
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/dotfiles/scripts:$PATH"
-export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
-
-export EDITOR=vim
-
-# nnn config
-export NNN_USE_EDITOR=1
-export NNN_BMS='m:/media;d:~/Downloads'
-export NNN_OPENER='mimeopen'
