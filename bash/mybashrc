@@ -8,7 +8,9 @@ source ~/.config/automatic.shell
 # Fancy prompt: [time] [user@hostname] [directory] \n $
 #
 export PS1="\[\033[01;32m\][\u@\h] \[\033[01;34m\][\w]\n\[\033[01;31m\]\$\[\033[00m\] "
-
+#export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/bin:$PATH"
+#export PATH="$HOME/dotfiles/scripts:$PATH"
 
 #
 # Aliases

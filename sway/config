@@ -212,6 +212,6 @@ bindsym {
 # Gaps #
 ########
 
-gaps inner 10
-gaps outer 10
-smart_gaps on
+#gaps inner 10
+#gaps outer 10
+#smart_gaps on
