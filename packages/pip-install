@@ -3,3 +3,4 @@ typing
 jinja2
 pyyaml
 wheel
+httpie

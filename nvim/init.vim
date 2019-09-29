@@ -5,34 +5,21 @@ call plug#begin('~/.config/nvim/plugged')
 
 " General
 Plug 'tpope/vim-commentary'
-"Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-surround'
 
-" Snippets
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'cespare/vim-toml'
-"Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+"Plug 'cespare/vim-toml'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'honza/vim-snippets'
 
 " Rust
 "Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
-"let g:ale_completion_enabled = 1
-" let g:ale_lint_on_text_changed = 'never'
-" Plug 'w0rp/ale', { 'for': 'rust' }
-" Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins', 'for': 'rust'  }
-" Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh', 'for': 'rust' }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
-" Plug 'Shougo/neosnippet.vim', { 'for': 'rust' }
-" Plug 'Shougo/neosnippet-snippets', { 'for': 'rust' }
-"Plug 'sebastianmarkow/deoplete-rust', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
-"Plug 'racer-rust/vim-racer', { 'do': ':UpdateRemotePlugins', 'for': 'rust' }
-
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+"Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
@@ -44,7 +31,6 @@ filetype plugin indent on
 set encoding=utf-8                          " The encoding displayed.
 set fileencoding=utf-8                      " The encoding written to file.
 set number                                  " Line numbers on
-"set relativenumber
 "set noshowmode                                " Always show mode
 set showcmd                                 " Show commands as you type them
 "set textwidth=120                           " Text width is 120 characters
@@ -60,7 +46,7 @@ set nostartofline                           " Prevent cursor from moving to begi
 set virtualedit=block                       " To be able to select past EOL in visual block mode
 "set nojoinspaces                            " No extra space when joining a line which ends w ith . ? !
 set scrolloff=5                             " Scroll when closing to top or bottom of the screen
-set updatetime=1000                         " Update time used to create swap file or other things
+set updatetime=300                         " Update time used to create swap file or other things
 "set suffixesadd+=.js,.rb                    " Add js and ruby files to suffixes
 set synmaxcol=160                           " Don't try to syntax highlight minified files
 set nospell
@@ -116,12 +102,12 @@ nnoremap <S-Tab> :bprevious<CR>
 "
 " fzf commands
 "
-nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>/ :Find<space>
+nnoremap <Leader>/ :Rg<space>
 
 " Find inside files
-command! -bang -nargs=* Find call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 "
 " Key mappings
@@ -159,11 +145,6 @@ set noswapfile
 
 
 
-" Snippets
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger = "<tab>"
-" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-
 "
 " Status line
 "
@@ -175,6 +156,9 @@ set statusline+=\
 set statusline+=%f                       " file name
 set statusline+=\ 
 set statusline+=%m%r%h%w                       " modified flag
+
+set statusline+=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 set statusline+=%=                       " right align
 set statusline+=%y                       " file type
 set statusline+=\ 
@@ -203,3 +187,25 @@ function! StatuslineMode()
   endif
 endfunction
 
+
+"
+" COC
+"
+" Move to diagnostics
+nmap <leader>k <Plug>(coc-diagnostic-prev)
+nmap <leader>j <Plug>(coc-diagnostic-next)
+
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Format whole buffer
+nmap <leader>f <Plug>(coc-format)
+
+" Go to definition
+nmap <leader>gd <Plug>(coc-definition)
+
+" coc-snippets
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

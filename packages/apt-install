@@ -41,6 +41,10 @@ cmus
 # video
 mpv
 
+# databases
+sqlite3
+libsqlite3-dev
+
 # misc
 feh
 bleachbit
@@ -60,3 +64,4 @@ zlib1g-dev
 libffi-dev
 xbacklight
 mumble
+byzanz
