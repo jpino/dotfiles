@@ -24,7 +24,7 @@ font pango: Ubuntu Mono, FontAwesome 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+# bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -114,6 +114,7 @@ bindsym $mod+o resize grow width 10 px or 10 ppt
 # Borders
 new_window none
 for_window [class="URxvt"] border pixel 4
+for_window [class="Alacritty"] border pixel 4
 
 # Yup
 focus_follows_mouse no
@@ -135,6 +136,9 @@ client.background       $base07
 ######################
 
 # Applications
+bindsym $mod+Return exec alacritty
+bindsym Mod4+a exec alacritty
+bindsym Mod4+t exec urxvt
 bindsym Mod4+b exec firefox
 bindsym Mod4+c exec urxvt -e bash -i -c "cmus"
 bindsym Mod4+h exec thunar
