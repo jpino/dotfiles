@@ -205,7 +205,25 @@ nmap <leader>f <Plug>(coc-format)
 " Go to definition
 nmap <leader>gd <Plug>(coc-definition)
 
-" coc-snippets
+" move up and down the pop up menu with ctrl-j and ctrl-k
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+" use TAB to expand snippet and jump to placeholders
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+
+"Better colors for signs
+hi CocWarningSign ctermfg=03 ctermbg=18
+hi CocErrorSign ctermfg=01 ctermbg=18
+hi CocInfoSign ctermfg=06 ctermbg=18
+hi CocHintSign ctermfg=02 ctermbg=18

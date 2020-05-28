@@ -5,12 +5,22 @@ source ~/.config/automatic.shell
 
 
 #
-# Fancy prompt: [time] [user@hostname] [directory] \n $
+# Fancy prompt.
 #
-export PS1="\[\033[01;32m\][\u@\h] \[\033[01;34m\][\w]\n\[\033[01;31m\]\$\[\033[00m\] "
-#export PATH="$HOME/.cargo/bin:$PATH"
-#export PATH="$HOME/bin:$PATH"
-#export PATH="$HOME/dotfiles/scripts:$PATH"
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    # If ssh: [user@hostname] [directory] \n 🚀
+    export PS1="\[\033[01;32m\][\u@\h] \[\033[01;34m\][\w]\n\[\033[01;31m\]🚀\[\033[00m\] "
+else
+    # No ssh: [directory] \n 🚀
+    export PS1="\[\033[01;34m\][\w]\n\[\033[01;31m\]🚀\[\033[00m\] "
+fi
+
+#
+# Fancy PATH to binaries
+#
+export PATH="/home/chanante/dotfiles/scripts:/home/chanante/.cargo/bin:"$PATH
+
+export DATABASE_URL="sqlite://todos.db"
 
 #
 # Aliases
