@@ -51,7 +51,8 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 # Basics:
 #
     # start a terminal
-    bindsym $mod+Return exec urxvt
+    bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty
+    # bindsym $mod+Return exec alacritty
 
     # kill focused window
     bindsym $mod+Shift+q kill
@@ -166,6 +167,7 @@ input "1:1:AT_Translated_Set_2_keyboard" {
 default_border none
 default_floating_border pixel 4
 for_window [class="URxvt"] border pixel 4
+for_window [class="Alacritty"] border pixel 4
 
 
 ##########
@@ -190,6 +192,7 @@ client.background       $base07
 ######################
 
 # Applications
+bindsym Mod4+t exec urxvt
 bindsym Mod4+b exec firefox
 bindsym Mod4+h exec thunar
 
