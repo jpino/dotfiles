@@ -20,6 +20,10 @@ folders:
 	rmdir ~/Templates
 	rmdir ~/Videos
 
+scripts:
+	chmod u+x ~/dotfiles/base16/base16-selector.py
+	chmod u+x ~/dotfiles/scripts/*
+
 
 .ONESHELL:
 neovim:
@@ -28,7 +32,6 @@ neovim:
 	ln -fs ~/src/nvim.appimage ~/bin/vim
 	ln -fs ~/dotfiles/nvim ~/.config/nvim
 	curl -o ~/dotfiles/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 
 i3:
 	ln -fs ~/dotfiles/i3 ~/.config/i3
@@ -39,19 +42,17 @@ i3:
 
 bash:
 	echo "source ~/dotfiles/bash/environment" >> ~/.profile
-	echo "source ~/dotfiles/bash/mybashrc" >> ~/.bashrc
+	echo "source ~/dotfiles/bash/bashrc" >> ~/.bashrc
 	ln -fs ~/dotfiles/bash/aliases ~/.bash_aliases
 	ln -fs ~/dotfiles/bash/inputrc ~/.inputrc
 
 
 base16:
-	~/dotfiles/scripts/base16 eighties
+	~/dotfiles/scripts/base16 dracula
 
 
-urxvt:
-	ln -fs ~/dotfiles/urxvt/Xresources ~/.Xresources
-	ln -fs ~/dotfiles/urxvt/Xresources ~/.Xdefaults
-	xrdb ~/.Xresources
+alacritty:
+	ln -fs ~/dotfiles/alacritty ~/.config/alacritty
 
 
 tmux:
@@ -59,7 +60,7 @@ tmux:
 
 
 git:
-	ln -fs ~/dotfiles/git/gitconfig ~/.gitconfig
+	ln -fs ~/dotfiles/git/ ~/.config/git
 
 
 rust:

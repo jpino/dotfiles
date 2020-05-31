@@ -107,7 +107,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>/ :Rg<space>
 
 " Find inside files
-command! -bang -nargs=* Rg call fzf#vim#grep( 'rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep( 'rg --no-heading --fixed-strings --smart-case --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 "
 " Key mappings
