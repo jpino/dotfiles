@@ -1,0 +1,34 @@
+#
+# Set ANSI colors
+#
+source ~/.config/automatic.shell
+
+
+#
+# Fancy prompt.
+#
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    # If ssh: [user@hostname] [directory] \n
+    export PS1="\[\033[01;34m\]\[\033[40m\][\u@\h] [\w]\[\033[00m\]\n\[\033[01;31m\]\[\033[00m\] "
+else
+    # No ssh: [directory] \n
+    export PS1="\[\033[01;34m\]\[\033[40m\][\w]\[\033[00m\]\n\[\033[01;31m\]\[\033[00m\] "
+fi
+
+#
+# Fancy PATH to binaries
+#
+export PATH="/home/chanante/dotfiles/scripts:/home/chanante/.cargo/bin:"$PATH
+
+export DATABASE_URL="sqlite://todos.db"
+
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
+
+
+#
+# Aliases
+#
+alias ll="ls -ahlF"
+alias weather="curl wttr.in"
+
