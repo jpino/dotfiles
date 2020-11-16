@@ -1,6 +1,6 @@
 # graphics
-firmware-amd-graphics 
-libgl1-mesa-dri 
+firmware-amd-graphics
+libgl1-mesa-dri
 libglx-mesa0
 mesa-vulkan-drivers
 xserver-xorg-video-all
@@ -8,6 +8,7 @@ xserver-xorg-video-all
 # window manager
 sway
 swayidle
+swaybg
 swaylock
 
 # screenshot
@@ -18,8 +19,19 @@ slurp
 libnotify-bin
 mako
 
-# terminal
+# fonts
 fonts-ubuntu
+fonts-font-awesome
+
+# terminal
+alacritty
+
+# editor
+neovim
+
+# command line
+fdfind
+ripgrep
 fzf
 
 # appearance
@@ -28,7 +40,8 @@ papirus-icon-theme
 
 # file managers
 thunar
-# trash-cli
+nnn
+trash-cli
 
 # sound
 pavucontrol
