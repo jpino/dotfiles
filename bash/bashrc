@@ -18,7 +18,7 @@ fi
 #
 # Fancy PATH to binaries
 #
-export PATH="/home/chanante/dotfiles/scripts:/home/chanante/.cargo/bin:"$PATH
+# export PATH="/home/chanante/dotfiles/scripts:/home/chanante/bin:/home/chanante/.cargo/bin:"$PATH
 
 export DATABASE_URL="sqlite://todos.db"
 
@@ -31,4 +31,4 @@ export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 #
 alias ll="ls -ahlF"
 alias weather="curl wttr.in"
-
+alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"

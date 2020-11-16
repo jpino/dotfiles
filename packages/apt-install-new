@@ -1,0 +1,82 @@
+# graphics
+firmware-amd-graphics 
+libgl1-mesa-dri 
+libglx-mesa0
+mesa-vulkan-drivers
+xserver-xorg-video-all
+
+# window manager
+sway
+swayidle
+swaylock
+
+# screenshot
+grim
+slurp
+
+# notifications
+libnotify-bin
+mako
+
+# terminal
+fonts-ubuntu
+fzf
+
+# appearance
+arc-theme
+papirus-icon-theme
+
+# file managers
+thunar
+# trash-cli
+
+# sound
+pavucontrol
+
+# system tools
+make
+htop
+# pmount
+
+# python
+python3-pip
+
+# rust
+libssl-dev
+
+# network
+network-manager
+curl
+nmap
+openssh-server
+sshfs
+
+# music
+cmus
+
+# video
+mpv
+
+# databases
+sqlite3
+libsqlite3-dev
+
+# misc
+feh
+bleachbit
+jq
+w3m
+irssi
+pass
+xsel
+gnome-icon-theme
+pandoc
+texlive-latex-base
+texlive-fonts-recommended
+libxml2-dev
+libxslt1-dev
+zlib1g-dev
+libffi-dev
+xbacklight
+mumble
+byzanz

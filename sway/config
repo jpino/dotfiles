@@ -6,7 +6,9 @@ set $mod Mod1
 # Output #
 ##########
 
-output * bg /home/chanante/.config/background-image.png fill
+# output * bg /home/chanante/.config/background-image.jpg fill
+output HDMI-A-1 pos 0 0 res 1920x1080
+output DVI-I-1 pos 1920 0
 
 
 ########
@@ -40,132 +42,125 @@ output * bg /home/chanante/.config/background-image.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input "1:1:AT_Translated_Set_2_keyboard" {
+# # laptop keyboard
+# input "1:1:AT_Translated_Set_2_keyboard" {
+#     xkb_layout us,es
+#     xkb_options ctrl:nocaps,grp:win_space_toggle
+# }
+
+# # desktop keyboard
+# input "1241:17733:USB_Keyboard" {
+#     xkb_layout us,es
+#     xkb_options ctrl:nocaps,grp:win_space_toggle
+# }
+
+input type:keyboard {
     xkb_layout us,es
     xkb_options ctrl:nocaps,grp:win_space_toggle
 }
 
 
-### Key bindings
-#
-# Basics:
-#
-    # start a terminal
-    bindsym $mod+Return exec urxvt
+###################
+# Sway management #
+###################
 
-    # kill focused window
-    bindsym $mod+Shift+q kill
+# reload the configuration file
+bindsym $mod+Shift+c reload
 
-    # start your launcher
-    bindsym $mod+d exec dmenu_path | dmenu | xargs swaymsg exec --
-
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
-
-    # reload the configuration file
-    bindsym $mod+Shift+c reload
-
-    # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-#
-# Moving around:
-#
-
-    focus_follows_mouse no
-    # Move your focus around
-    bindsym $mod+h focus left
-    bindsym $mod+j focus down
-    bindsym $mod+k focus up
-    bindsym $mod+l focus right
-
-    # _move_ the focused window with the same, but add Shift
-    bindsym $mod+Shift+h move left
-    bindsym $mod+Shift+j move down
-    bindsym $mod+Shift+k move up
-    bindsym $mod+Shift+l move right
-#
-# Workspaces:
-#
-    # switch to workspace
-    bindsym $mod+1 workspace 1
-    bindsym $mod+2 workspace 2
-    bindsym $mod+3 workspace 3
-    bindsym $mod+4 workspace 4
-    bindsym $mod+5 workspace 5
-    bindsym $mod+6 workspace 6
-    bindsym $mod+7 workspace 7
-    bindsym $mod+8 workspace 8
-    bindsym $mod+9 workspace 9
-    bindsym $mod+0 workspace 10
-    # move focused container to workspace
-    bindsym $mod+Shift+1 move container to workspace 1
-    bindsym $mod+Shift+2 move container to workspace 2
-    bindsym $mod+Shift+3 move container to workspace 3
-    bindsym $mod+Shift+4 move container to workspace 4
-    bindsym $mod+Shift+5 move container to workspace 5
-    bindsym $mod+Shift+6 move container to workspace 6
-    bindsym $mod+Shift+7 move container to workspace 7
-    bindsym $mod+Shift+8 move container to workspace 8
-    bindsym $mod+Shift+9 move container to workspace 9
-    bindsym $mod+Shift+0 move container to workspace 10
-    # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
-#
-# Layout stuff:
-#
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
-
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
-
-    # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
-
-    # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
-
-    # move focus to the parent container
-    bindsym $mod+a focus parent
-#
-# Scratchpad:
-#
-    # Sway has a "scratchpad", which is a bag of holding for windows.
-    # You can send windows there and get them back later.
-
-    # Move the currently focused window to the scratchpad
-    bindsym $mod+Shift+minus move scratchpad
-
-    # Show the next scratchpad window or hide the focused scratchpad window.
-    # If there are multiple scratchpad windows, this command cycles through them.
-    bindsym $mod+minus scratchpad show
-#
-# Resizing containers:
-#
-    bindsym $mod+y resize shrink width 10px
-    bindsym $mod+u resize grow height 10px
-    bindsym $mod+i resize shrink height 10px
-    bindsym $mod+o resize grow width 10px
+# exit sway
+bindsym $mod+Shift+e exec swaynag -t warning -m 'Exit sway and log out?' -b 'Yes, exit sway' 'swaymsg exit'
 
 
-#
-# Border:
-#
+###########
+# Windows #
+###########
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+focus_follows_mouse no
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused window to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# split container
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# nake the current window fullscreen
+bindsym $mod+f fullscreen
+
+# toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# move focus to the parent container
+bindsym $mod+a focus parent
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# resize containers
+bindsym $mod+y resize shrink width 20px
+bindsym $mod+u resize grow height 20px
+bindsym $mod+i resize shrink height 20px
+bindsym $mod+o resize grow width 20px
+
+# borders
 default_border none
 default_floating_border pixel 4
-for_window [class="URxvt"] border pixel 4
+for_window [class="Alacritty"] border pixel 4
 
 
 ##########
@@ -189,9 +184,20 @@ client.background       $base07
 # Keyboard shortcuts #
 ######################
 
+# start launcher
+bindsym $mod+d exec dmenu_path | dmenu | xargs swaymsg exec --
+
 # Applications
+bindsym $mod+Return exec WINIT_UNIX_BACKEND=x11 alacritty
 bindsym Mod4+b exec firefox
 bindsym Mod4+h exec thunar
+bindsym Mod4+s exec sol
+
+# Print screen
+bindsym Print exec --no-startup-id grim -g "$(slurp)" ~/projects/screenshots/$(date +'%s_shot.png')
+
+# Show time and other info
+bindsym Mod4+z exec --no-startup-id notify-send -t 4000 "$(date +"%H:%M - %A %d %B %Y")"
 
 # Volume control
 bindsym {
@@ -208,10 +214,17 @@ bindsym {
 }
 
 
+###########
+# Startup #
+###########
+
+exec mako
+
+
 ########
 # Gaps #
 ########
 
-gaps inner 10
-gaps outer 10
-smart_gaps on
+# gaps inner 10
+# gaps outer 10
+# smart_gaps on
