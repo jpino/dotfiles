@@ -1,11 +1,11 @@
 font=Ubuntu Mono
 
 [green]
-background=f8f8f2
+background=e9e9f4
 border=3a3c4e
 border-bottom=626483
-text=282a36
-button-background=8be9fd
+text=282936
+button-background=a1efe4
 
 [warning]
 
