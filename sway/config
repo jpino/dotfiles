@@ -6,7 +6,7 @@ set $mod Mod1
 # Output #
 ##########
 
-# output * bg /home/chanante/.config/background-image.jpg fill
+output * bg /home/chanante/.config/background-image.jpg fill
 output HDMI-A-1 pos 0 0 res 1920x1080
 output DVI-I-1 pos 1920 0
 
@@ -231,6 +231,6 @@ exec mako
 # Gaps #
 ########
 
-# gaps inner 10
-# gaps outer 10
-# smart_gaps on
+gaps inner 10
+gaps outer 10
+smart_gaps on

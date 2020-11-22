@@ -37,8 +37,8 @@ def main(scheme, templates):
             sway(r)
         # elif t == 'i3':
         #     i3(r)
-        elif t == 'dunst':
-            dunst(r)
+        # elif t == 'dunst':
+        #     dunst(r)
         elif t == 'swaynag':
             swaynag(r)
 
@@ -99,14 +99,14 @@ def swaynag(config):
             file_config.write(config)
 
 
-def dunst(config):
-    print("Writing dunst config file... (to apply changes, restart dunst daemon with: sudo pkill dunst)")
-    with open(os.path.expanduser('~/dotfiles/dunst/base'), 'r') as file_base:
-        base = file_base.read()
-
-        with open(os.path.expanduser('~/dotfiles/dunst/dunstrc'), 'w') as file_config:
-            file_config.write(base)
-            file_config.write(config)
+# def dunst(config):
+#     print("Writing dunst config file... (to apply changes, restart dunst daemon with: sudo pkill dunst)")
+#     with open(os.path.expanduser('~/dotfiles/dunst/base'), 'r') as file_base:
+#         base = file_base.read()
+# 
+#         with open(os.path.expanduser('~/dotfiles/dunst/dunstrc'), 'w') as file_config:
+#             file_config.write(base)
+#             file_config.write(config)
 
 
 if __name__ == "__main__":

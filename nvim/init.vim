@@ -105,6 +105,8 @@ nnoremap <S-Tab> :bprevious<CR>
 "
 " fzf commands
 "
+let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.5, 'highlight': 'Comment' } }
+
 nnoremap <Leader>e :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>/ :Rg<space>

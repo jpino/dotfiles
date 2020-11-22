@@ -7,9 +7,9 @@ if [ $# -eq 0 ]; then
     if [[ $scheme = "" ]]; then
         exit 0
     fi
-    python3 ~/dotfiles/base16/base16-selector.py $scheme bash neovim i3 dunst sway swaynag
 else
     # if an argument is passed, install that scheme
-    python3 ~/dotfiles/base16/base16-selector.py $1 bash neovim i3 dunst sway swaynag
+    scheme=$1
 fi
 
+python3 ~/dotfiles/base16/base16-selector.py $scheme bash neovim i3 sway swaynag
