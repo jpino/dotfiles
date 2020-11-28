@@ -1,5 +1,7 @@
 set editing-mode vi
 set show-mode-in-prompt on
+set enable-bracketed-paste on
+
 
 # # Reset
 # Color_Off='\033[0m'       # Text Reset

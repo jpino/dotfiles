@@ -232,5 +232,6 @@ exec mako
 ########
 
 gaps inner 10
-gaps outer 10
-smart_gaps on
+gaps outer 0
+# smart_gaps on
+smart_gaps off

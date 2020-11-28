@@ -1,4 +1,4 @@
-"
+
 " Plugins
 "
 call plug#begin('~/.config/nvim/plugged')
@@ -11,18 +11,14 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 "Plug 'cespare/vim-toml'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'honza/vim-snippets'
-
-" Rust
-"Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
-" Plug 'dense-analysis/ale', { 'for': 'markdown' }
-
+Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
 
@@ -193,42 +189,16 @@ function! StatuslineMode()
 endfunction
 
 
-""
-"" COC
-""
-"" Move to diagnostics
-"nmap <leader>k <Plug>(coc-diagnostic-prev)
-"nmap <leader>j <Plug>(coc-diagnostic-next)
 
+" " Use <Tab> and <S-Tab> to navigate through popup menu
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
-"" Remap for rename current word
-"nmap <leader>rn <Plug>(coc-rename)
+" " Set completeopt to have a better completion experience
+" set completeopt=menuone,noinsert,noselect
 
-"" Format whole buffer
-"nmap <leader>f <Plug>(coc-format)
-
-"" Go to definition
-"nmap <leader>gd <Plug>(coc-definition)
-
-"" move up and down the pop up menu with ctrl-j and ctrl-k
-"inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-"inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-
-"" use TAB to expand snippet and jump to placeholders
-"inoremap <silent><expr> <TAB>
-"      \ pumvisible() ? coc#_select_confirm() :
-"      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"      \ <SID>check_back_space() ? "\<TAB>" :
-"      \ coc#refresh()
-
-"function! s:check_back_space() abort
-"  let col = col('.') - 1
-"  return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-
-
-""Better colors for signs
-"hi CocWarningSign ctermfg=03 ctermbg=18
-"hi CocErrorSign ctermfg=01 ctermbg=18
-"hi CocInfoSign ctermfg=06 ctermbg=18
-"hi CocHintSign ctermfg=02 ctermbg=18
+" " Avoid showing message extra message when using completion
+" set shortmess+=c
+" """ LSP configuration
+" lua require'lspconfig'.rust_analyzer.setup{on_attach=require('completion').on_attach}
+" " lua require'lspconfig'.rust_analyzer.setup{}
