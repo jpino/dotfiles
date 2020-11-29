@@ -17,4 +17,5 @@ else
     NEXT_BRIGHTNESS=400
 fi
 
-echo $NEXT_BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness
+# echo $NEXT_BRIGHTNESS > /sys/class/backlight/intel_backlight/brightness
+echo $NEXT_BRIGHTNESS

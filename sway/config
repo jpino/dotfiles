@@ -203,7 +203,7 @@ bindsym Mod4+s exec sol
 bindsym Print exec --no-startup-id grim -g "$(slurp)" ~/projects/screenshots/$(date +'%s_shot.png')
 
 # Show time and other info
-bindsym Mod4+z exec --no-startup-id notify-send -t 4000 "$(date +"%H:%M - %A %d %B %Y")"
+bindsym Mod4+z exec --no-startup-id notify-send -t 3000 "$(date +"%H:%M - %A %d %B %Y")"
 
 # Volume control
 bindsym {
@@ -215,8 +215,8 @@ bindsym {
 
 # Brightness control
 bindsym {
-    XF86MonBrightnessDown exec --no-startup-id adjustbrightness down
-    XF86MonBrightnessUp exec --no-startup-id adjustbrightness up
+    XF86MonBrightnessDown exec brightnessctl -q set 5%-
+    XF86MonBrightnessUp exec brightnessctl -q set +5%
 }
 
 
