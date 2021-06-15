@@ -55,17 +55,8 @@ alacritty:
 	ln -fs ~/dotfiles/alacritty ~/.config/alacritty
 
 
-tmux:
-	ln -fs ~/dotfiles/tmux ~/.config/tmux
-
-
 git:
 	ln -fs ~/dotfiles/git/ ~/.config/git
-
-
-rust:
-	curl https://sh.rustup.rs -sSf | sh
-	cargo install racer rustfmt
 
 
 cron:
@@ -74,3 +65,5 @@ cron:
 
 postinstall:
 	gio mime inode/directory Thunar-folder-handler.desktop
+
+# xdg-mime default thunar.desktop inode/directory

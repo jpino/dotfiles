@@ -202,3 +202,40 @@ endfunction
 " """ LSP configuration
 " lua require'lspconfig'.rust_analyzer.setup{on_attach=require('completion').on_attach}
 " " lua require'lspconfig'.rust_analyzer.setup{}
+"
+"
+
+" Find definition of word under cursor
+function! FindDefinition ()
+    let l:word = expand("<cword>")
+    if len(l:word) > 1
+        " echo len(l:word) . ' ' . l:word
+        let l:command = 'firefox https://www.merriam-webster.com/dictionary/' . l:word
+        " echo l:command
+        call system(l:command)
+    endif
+endfunction
+
+" Find synonyms of word under cursor
+function! FindSynonyms ()
+    let l:word = expand("<cword>")
+    if len(l:word) > 1
+        let l:command = 'firefox https://www.merriam-webster.com/thesaurus/' . l:word
+        call system(l:command)
+    endif
+endfunction
+
+" Find esp -> eng translation of word under cursor
+function! TranslateEspEng ()
+    let l:word = expand("<cword>")
+    if len(l:word) > 1
+        let l:command = 'firefox https://www.wordreference.com/es/en/translation.asp?spen=' . l:word
+        call system(l:command)
+    endif
+endfunction
+
+nnoremap <leader>d :call FindDefinition ()<CR>
+nnoremap <leader>s :call FindSynonyms ()<CR>
+nnoremap <leader>t :call TranslateEspEng ()<CR>
+
+

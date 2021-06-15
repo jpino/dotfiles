@@ -6,6 +6,6 @@ AC=$(cat /sys/class/power_supply/AC/online)
 
 TOTAL=$((BAT0+$BAT1))
 if [[ $AC == "0" && $TOTAL -le 5 ]]; then
-    notify-send "Battery low: $TOTAL/200"
+    XDG_RUNTIME_DIR=/run/user/$(id -u) notify-send "Battery low: $TOTAL/200"
 fi
 
