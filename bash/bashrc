@@ -16,20 +16,21 @@ else
 fi
 
 #
-# Fancy PATH to binaries
+# Fancy $VARIABLES
 #
-# export PATH="/home/chanante/dotfiles/scripts:/home/chanante/bin:/home/chanante/.cargo/bin:"$PATH
+export EDITOR="vim"
 
 export DATABASE_URL="sqlite://todos.db"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
 
+# PATH="$HOME/dotfiles/scripts:$HOME/bin:$HOME/.cargo/bin:$PATH"
 
 #
-# Aliases
+# Fancy aliases
 #
 alias ll="ls -ahlF"
-alias weather="curl wttr.in"
+alias ls="ls --color=auto"
 alias gnome="XDG_SESSION_TYPE=wayland dbus-run-session gnome-session"
 alias fd="fdfind"

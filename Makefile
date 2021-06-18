@@ -1,5 +1,5 @@
 all: neovim tmux i3 urxvt git bash
-.PHONY: packages neovim tmux i3 urxvt git bash
+.PHONY: packages folders scripts neovim i3 bash base16 alacritty git cron
 
 
 packages:
@@ -27,7 +27,7 @@ scripts:
 
 .ONESHELL:
 neovim:
-	curl -o ~/src/nvmi.appimage https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	curl -o ~/src/nvim.appimage https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	chmod u+x ~/src/nvim.appimage
 	ln -fs ~/src/nvim.appimage ~/bin/vim
 	ln -fs ~/dotfiles/nvim ~/.config/nvim
@@ -41,9 +41,8 @@ i3:
 
 
 bash:
-	echo "source ~/dotfiles/bash/environment" >> ~/.profile
 	echo "source ~/dotfiles/bash/bashrc" >> ~/.bashrc
-	ln -fs ~/dotfiles/bash/aliases ~/.bash_aliases
+	ln -fs ~/dotfiles/bash/profile ~/.profile
 	ln -fs ~/dotfiles/bash/inputrc ~/.inputrc
 
 
